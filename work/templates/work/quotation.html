@@ -1,0 +1,176 @@
+{% extends "work/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="jumbotron hideClick" style="text-decoration: inherit;" id="hider">
+    	<h2 style=" font-family:monotype corsiva; font-weight: 900;">Sent Quotation Details</h2>
+    	<table class="table table-striped" >
+    		<thead>
+      			<tr>
+        			<th>Name</th>
+        			<th>Attendent</th>
+        			<th>Phone</th>
+        			<th>Subject</th>
+        			<th>State Code</th>
+        			<th>State</th>
+        			<th>Address</th>
+        			<th>Quotation Number</th>
+        			<th>Date</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+            {% for i in person %}
+      			<tr>
+        			<td><a href="#" id="Show">{{i.name}}</a></td>
+        			<td>{{i.atten}}</td>
+        			<td>{{i.contact}}</td>
+        			<td>{{i.subject}}</td>
+        			<td>{{i.statecode}}</td>
+        			<td>{{i.state}}</td>
+        			<td>{{i.address}}</td>
+        			<td>{{i.quotnum}}</td>
+        			<td>{{i.quotdate}}</td>
+        			
+      			</tr>
+            {% endfor %}
+    		</tbody>
+  		</table>  
+  		    
+    </div>
+    <div id="now" style="display: none;">
+
+<div class="card" style="width: 66rem; margin-left: 2px; border: 2px solid black;">
+  <img class="card-img-top" src="{% static 'work/aepl logo.jpg' %}"
+    alt="Card image cap" style="width:90px; height: 90px; ">
+  <p style="float: right; margin-top: 10px; margin-right: 20px; font-weight: 500;"> GSTIN : 09AAKCA5610R1Z5</p>
+  <div class="card-body col-md-12" style="text-align: center;">
+    <p class="card-title" style="font-size:2em; font-weight: 650; color: red;">Alert Enterprises Pvt. Ltd.</p>
+    <p class="card-title" style="font-size:0.9em; margin-left: -15px; margin-right: -15px; margin-top: -10px; max-width: 830px; background-color: blue; color: white;">Fire Safety & Industrial Safety Equipment</p>
+    <p class="card-title" style="font-size:0.9em; margin-left: -15px; margin-right: -15px; margin-top: -5px; max-width: 830px;">Reg.Office-5,Ist Floor ,Prakash Plaza,Civil Hospital Chowk,Saharanpur</p>
+    <p class="card-title" style="font-size:0.9em; margin-left: -15px; margin-right: -15px; margin-top: -5px; max-width: 830px;">Head Office- H-204 , Sec-12 , Pratap Vihar, Ghaziabad- 201009</p>
+    <p class="card-title" style="font-size:0.9em; margin-left: -15px; margin-right: -15px; margin-top: -5px; max-width: 830px;">Email-info@alert-enterprises.com/tripathi_alert@rediffmail.com Mobile No. 8527291298</p>
+  </div>
+  <table class="card-table table">
+    <tbody>
+      <tr>
+        <td style="border: 1px solid black;">Name: {{person.0.name}}</td>
+        <td style="border: 1px solid black;">Kind Atten: {{person.0.atten}}</td>
+      </tr>
+      <tr>
+      	<td style="border: 1px solid black;" style="border-top: 1px solid black;">State: {{person.0.state}}</td>
+        <td style="border: 1px solid black;">Address: {{person.0.address}}</td>
+      </tr>
+       <tr>
+      	<td style="border: 1px solid black;">Subject: {{person.0.subject}}</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid black;">State Code: {{person.0.statecode}}</td>
+        <td style="border: 1px solid black;">Contact: {{person.0.contact}}</td>
+        
+      </tr>
+     
+      <tr class="table-primary">
+        <td style="border: 1px solid black;">Quotation Number:      {{person.0.quotnum}}</td>
+        <td style="border: 1px solid black;">Quotation Date: {{person.0.quotdate}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="card-table table" style="text-align: center;" id="example">
+      <thead style="border: 2px solid ">
+        <tr>
+          <th scope="col" style="text-align: center;border: 1px solid black;">S.No.</th>
+          <th scope="col" style="text-align: center;border: 1px solid black;">Particulars</th>
+          <th scope="col" style="text-align: center;border: 1px solid black;">HSN</th>
+          <th scope="col" style="text-align: center;border: 1px solid black;">Qty</th>
+          <th scope="col" style="text-align: center;border: 1px solid black;">Unit</th>
+          <th scope="col" style="text-align: center;border: 1px solid black;">Rate</th>
+          <th scope="col" style="text-align: center;border: 1px solid black;">Amount</th>
+          <th scope="col" style="text-align: center;border: 1px solid black;">Tax Rate</th>
+          <th scope="col" style="text-align: center;border: 1px solid black;">Tax Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for i in product %}
+        <tr style="max-width: 830px;">
+          <td style="text-align: center;border: 1px solid black;">{{forloop.counter}}</td>
+          <td style="text-align: center;border: 1px solid black;">{{i.prodname}} <br><img src="{{stock.0.item_image.url}}" style="width:150px;height:110px; float:center;"></td>
+          <td style="text-align: center;border: 1px solid black;">8548</td>
+          <td style="text-align: center;border: 1px solid black;">{{i.qty}}</td>
+          <td style="text-align: center;border: 1px solid black;">{{i.unit}}</td>
+          <td style="text-align: center;border: 1px solid black;">{{i.rate}}</td>
+          <td style="text-align: center;border: 1px solid black;">4875</td>
+          <td style="text-align: center;border: 1px solid black;">{{i.tax}}%</td>
+          <td style="text-align: center;border: 1px solid black;">1548</td>
+          
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    <div style="margin-top: -22px">
+      <p class="col-md-8" style="border: 1px solid black; text-align: center;">Total</p>
+      <p class="col-md-4" style="border: 1px solid black; text-align: center;">163284</p>
+    </div>
+    
+    <table class="card-table table" style="text-align: center;">
+      <thead style="border: 2px solid; max-width: 830px;">
+        <tr>
+          <th scope="col" colspan="5" style="text-align: center;padding-bottom: 20px;border-bottom: 1px solid black; border-top: 1px solid black; width: 100px;">Terms and Conditions</th>
+          <th scope="col" colspan="4" style="text-align: center;padding-bottom: 20px;border-bottom: 1px solid black; border-top: 1px solid black; width: 100px;">Bank Details</th>
+          <th scope="col" colspan="3" style="text-align: center;border-bottom: 1px solid black; border-top: 1px solid black; width: 100px;">For Alert Enterprises Pvt Ltd</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="col" colspan="5" style="text-align: left; font-size: 0.8em; border-right: 1px solid black;border-bottom: 1px solid black;">1. Frieght Extra as usual<br> 2. GST are inclusive<br> 3.100% payment within 15 days of the date of recieve <br> 4. Delivery with in 15 days after confirmed PO <br> 5. Quotation valid for 45 days <br> 6. Under MSME Act 2006 Vide Registration No. 090012104682 </td>
+          <td scope="col" colspan="4" style="text-align: left; font-size: 0.8em; border-right: 1px solid black;border-bottom: 1px solid black;">Alert Enterprises Pvt. Ltd. <br> Union Bank of India <br> Account No. 499105010060271 <br> Account type - CC <br> IFSC Code - UBIN 0549916 <br> Address - New Awas Vikas Delhi </td>
+          <td scope="col" colspan="3" style="text-align: center; padding-top: 20px; font-size: 2.5em; font-family: monotype corsiva">{{product.0.signature}}</td>
+        </tr>
+      </tbody>
+      <tfoot style="text-align: center; margin: -20px;">
+        <td colspan="5"></td>
+        <td colspan="4"></td>
+        <td colspan="3" style="text-align: center; border: 2px solid black; margin: -20px;">Authorised Signatory</td>
+      </tfoot>
+
+    </table>
+   
+	</div>
+
+<script type="text/javascript">
+  window.onload = function(){
+    document.getElementById("Show").addEventListener("click", () =>{
+      const now = document.getElementById("now");
+      var opt = {
+        margin:1.54,
+        filename: '{{person.0.name}}'+' '+'{{person.0.quotnum}}'+' '+ '.pdf',
+        html2canvas: { scale:2 },
+        jsPDF: {unit:'cm',orientation: 'portrait'}
+      }
+      html2pdf().from(now).set(opt).save();
+    })
+  }
+</script>
+<br><br>
+	</div>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+{% block javascript %}
+	<script type="text/javascript">
+		document.getElementById("Show").addEventListener("click",function(){
+			var box=document.getElementById("now");
+			var tab=document.getElementById("hider")
+			if(box.style.display=="none")
+			{
+				box.style.display="block";
+				tab.style.display="none"
+			}
+			else
+			{
+				box.style.display="none";
+			}
+		});
+
+	</script>
+
+{% endblock javascript %}
+{% endblock content%}

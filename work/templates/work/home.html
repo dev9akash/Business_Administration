@@ -1,0 +1,21 @@
+{% extends "work/base.html" %}
+{% block content %}
+    <a href="#" id="Show">Show div</a>
+    <div id="now" style="display: none;">
+		<h1>This is the Content Area To be Displayed on Clicking</h1>
+	</div>
+	
+    <script type="text/javascript">
+		document.getElementById("Show").addEventListener("click",function(){
+			var box=document.getElementById("now");
+			if(box.style.display=="none")
+			{
+				box.style.display="block";
+			}
+			else
+			{
+				box.style.display="none";
+			}
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'project/base.html' %}
+{% block content %}
+    <div class="" style="text-decoration: inherit;">
+    	<h2 style=" font-family:monotype corsiva; font-weight: 900;">Billing Details</h2>
+    	<table class="table table-striped">
+    		<thead>
+      			<tr>
+        			<th>Branch</th>
+        			<th>Client GST</th>
+					    <th>Client State</th>
+        			<th>Company Name</th>
+					    <th>Complete Address</th>
+        			<th>Billing Date</th>
+              <th>RGP date</th>
+              <th>RGP No./Challlan No.</th>
+              <th>PO No</th>
+              <th>PO Date</th>
+              <th>HSN/SSC Code</th>
+              <th>Item Description</th>
+              <th>Qty </th>
+              <th>Rate</th>
+              <th>Amount</th>
+              <th>GST</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+          {% for i in bills %}
+      			<tr>
+        			<td>{{i.branch}}</td>
+              <td>{{i.client_gst}}</td>
+              <td>{{i.client_state}}</td>
+              <td>{{i.company}}</td>
+              <td>{{i.company_add}}</td>
+              <td>{{i.bill_date}}</td>
+              <td>{{i.rgpdate}}</td>
+              <td>{{i.rgpno}}</td>
+              <td>{{i.po_no}}</td>
+              <td>{{i.po_date}}</td>
+              <td>{{i.hsn}}</td>
+              <td>{{i.item_description}}</td>
+              <td>{{i.quantity_item}}</td>
+              <td>{{i.pricing}}</td>
+              <td>{{i.total}}</td>
+              <td>{{i.gst}}</td>
+      			</tr>
+          {% endfor %}
+    		</tbody>
+  		</table>
+    </div>
+{% endblock content %}
+
+<!--
+
+->

@@ -1,0 +1,36 @@
+{% extends "project/base.html" %}
+{% block content %}
+    <div class="jumbotron" style="text-decoration: inherit;">
+      <h2 style=" font-family:monotype corsiva; font-weight: 900;">Material Requirement Details</h2>
+      <table class="table table-striped">
+        <thead>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Unit</th>
+              <th>Required For</th>
+              <th>Reference</th>
+              <th>Priority</th>
+              <th>Make</th>
+              <th>Delivery Deadline Date</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for i in data %}
+            <tr>
+              <td>{{i.product}}</td>
+              <td>{{i.quantity}} </td>
+              <td>{{i.unit}} </td>
+              <td>{{i.required}} </td>
+              <td>{{i.refer}}</td>
+              <td>{{i.priority}}</td>
+              <td>{{i.make}}</td>  
+              <td>{{i.deadline}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>  
+      <button class="btn btn-success" style="float: right;"><span class="glyphicon glyphicon-edit">Edit</span></button>     
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+ <style type="text/css">
+ 	@page{
+ 		size: a4;
+ 		margin: 2.5cm 1.5cm 3.5cm 1.5cm;
+ 		
+ 	}
+ </style>
+</head>
+<body>
+	 <img class="card-img-top" src="{% static 'admin/photo.jpg' %}"
+    alt="Card image cap" style="width:90px; height: 90px;">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size:2em; font-weight: 650; padding-left: 150px;">Alert Enterprises Pvt. Ltd.</h5>
+  </div>
+  <table class="card-table table">
+    <tbody>
+      <tr>
+        <td>Name: {{person.0.name}}</td>
+        <td>Kind Atten: {{person.0.atten}}</td>
+      </tr>
+      <tr>
+      	<td>State: {{person.0.state}}</td>
+        <td>Address: {{person.0.address}}</td>
+      </tr>
+       <tr>
+      	<td>Subject: {{person.0.address}}</td>
+      </tr>
+      <tr>
+        <td>State Code: {{person.0.statecode}}</td>
+        <td>Contact: {{person.0.contact}}</td>
+        
+      </tr>
+     
+      <tr class="table-primary">
+        <td>Quotation Number:      {{person.0.quotnum}}</td>
+        <td>Quotation Date: {{person.0.quotdate}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="card-table table" style="text-align: center;">
+      <thead style="border: 2px solid ">
+        <tr>
+          <th scope="col" style="text-align: center;">S.No.</th>
+          <th scope="col" colspan="3" style="text-align: center;">Particulars</th>
+          <th scope="col" style="text-align: center;">HSN</th>
+          <th scope="col" style="text-align: center;">Qty</th>
+          <th scope="col" style="text-align: center;">Unit</th>
+          <th scope="col" style="text-align: center;">Rate</th>
+          <th scope="col" style="text-align: center;">Amount</th>
+          <th scope="col" style="text-align: center;">Tax Rate</th>
+          <th scope="col" style="text-align: center;">Tax Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for i in product %}
+        <tr>
+          <td scope="col" style="text-align: center;"></td>
+          <td scope="col" style="text-align: center;">{{i.prodname}}</td>
+          <td scope="col" style="text-align: center;"></td>
+          <td scope="col" style="text-align: center;">{{i.qty}}</td>
+          <td scope="col" style="text-align: center;">{{i.unit}}</td>
+          <td scope="col" style="text-align: center;">{{i.rate}}</td>
+          <td scope="col" style="text-align: center;"></td>
+          <td scope="col" style="text-align: center;">{{i.tax}}</td>
+          <td scope="col" style="text-align: center;"></td>
+          
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</body>
+</html>

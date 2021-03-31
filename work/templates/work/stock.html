@@ -1,0 +1,35 @@
+{% extends 'work/base.html' %}
+{% block content %}
+    <div class="" style="text-decoration: inherit;">
+    	<h2 style=" font-family:monotype corsiva; font-weight: 900;">Available Stock Details</h2>
+    	<table class="table table-striped">
+    		<thead>
+      			<tr>
+        			<th>Item Name</th>
+        			<th>Description</th>
+					<th>HSN Code</th>
+        			<th>Quantity</th>
+					<th>Unit</th>
+        			<th>Purchase Rate</th>
+        			<th style="padding-left: 130px;">Image</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+          {% for i in item %}
+      			<tr>
+        			<td>{{i.item_name}}</td>
+        			<td>{{i.item_desc}} </td>
+					<td>{{i.hsn}}</td>
+        			<td>{{i.item_qty}} </td>
+					<td>{{i.unit}}</td>
+					<td>{{i.purchase_rate}}</td>
+
+        			<td><img src="{{i.item_image.url}}" style="width:250px;height:150px; float:center;"></td>
+
+      			</tr>
+          {% endfor %}
+    		</tbody>
+  		</table>
+  		<button class="btn btn-success" style="float: right;"><span class="glyphicon glyphicon-edit">Edit</span></button>
+    </div>
+{% endblock content %}

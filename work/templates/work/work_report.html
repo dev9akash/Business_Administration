@@ -1,0 +1,301 @@
+{% extends "work/base.html" %}
+{% block content %}
+    <div class="jumbotron" style="text-decoration: inherit;">
+    	<h2 style=" font-family:monotype corsiva; font-weight: 900;">New Client Details</h2>
+    	<button class="btn btn-success" style="float: right; margin-top: -80px; height: 40px; width: 100px; font-size: 1.5em; text-align: center; overflow:hidden;"  data-toggle="modal" data-target="#newclient"><span class="glyphicon glyphicon-plus" style="font-size: 1em;">Add</span></button>
+    	<table class="table table-striped">
+    		<thead>
+      			<tr>
+        			<th>Client Name</th>
+        			<th>Purpose</th>
+        			<th>Contact Person</th>
+        			<th>Contact Number</th>
+        			<th>Status</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+            {% for i in newclient %}
+      			<tr>
+        			<td>{{i.client_name}} </td>
+        			<td>{{i.purpose}} </td>
+        			<td>{{i.contact_person}} </td>
+        			<td>{{i.contact_no}} </td>
+        			<td>{{i.reverted}} </td>
+      			</tr>
+            {% endfor %}
+    		</tbody>
+  		</table>  	     
+    </div>
+        <div class="jumbotron" style="text-decoration: inherit;">
+    	<h2 style=" font-family:monotype corsiva; font-weight: 900;">Old client Details</h2>
+    	<button class="btn btn-success" style="float: right; margin-top: -80px; height: 40px; width: 100px; font-size: 1.5em; text-align: center;"><span class="glyphicon glyphicon-plus" style="font-size: 1em; overflow:hidden;" data-toggle="modal" data-target="#oldclient">Add</span></button>
+    	<table class="table table-striped">
+    		<thead>
+      			<tr>
+        			<th>Client Name</th>
+        			<th>Purpose</th>
+        			<th>Contact Person</th>
+        			<th>Contact Number</th>
+        			<th>Status</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+            {% for j in oldclient %}
+      			<tr>
+        			<td>{{j.clientname}} </td>
+        			<td>{{j.purposetalk}} </td>
+        			<td>{{j.contactperson}} </td>
+        			<td>{{j.contactno}} </td>
+        			<td>{{j.revert}} </td>
+      			</tr>
+            {% endfor %}
+    		</tbody>
+  		</table>  	     
+    </div>
+        <div class="jumbotron" style="text-decoration: inherit;">
+    	<h2 style=" font-family:monotype corsiva; font-weight: 900;">Payment Follow-up Details</h2>
+    	<button class="btn btn-success" style="float: right; margin-top: -80px; height: 40px; width: 100px; font-size: 1.5em; text-align: center; overflow:hidden;"><span class="glyphicon glyphicon-plus" style="font-size: 1em;" data-toggle="modal" data-target="#payment">Add</span></button>
+    	<table class="table table-striped">
+    		<thead>
+      			<tr>
+        			<th>Client Name</th>
+        			<th>Amount Due</th>
+        			<th>Quotation Number</th>
+                    <th>Sent Date</th>
+        			
+        			<th>Fullow-up Date</th>
+        			<th>Status</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+            {% for k in payFollow %}
+      			<tr>
+        			<td>{{k.clients}} </td>
+                    <td>{{k.dueamt}} </td>
+                    <td>{{k.quotnumber}} </td>
+                    <td>{{k.sentdate}} </td>       			
+        			<td>{{k.followupdate}} </td>
+        			<td>{{k.reply}} </td>
+        			
+      			</tr>
+            {% endfor %}
+    		</tbody>
+  		</table>  	     
+    </div>
+        <div class="jumbotron" style="text-decoration: inherit;">
+    	<h2 style=" font-family:monotype corsiva; font-weight: 900;">Quotation Follow-up Details</h2>
+    	<button class="btn btn-success" style="float: right; margin-top: -80px; height: 40px; width: 100px; font-size: 1.5em; text-align: center; overflow: hidden;"><span class="glyphicon glyphicon-plus" style="font-size: 1em;"  data-toggle="modal" data-target="#quotation">Add</span></button>
+    	<table class="table table-striped">
+    		<thead>
+      			<tr>
+        			<th>Client Name</th>
+        			<th>Contact Person</th>
+        			<th>Contact Number</th>
+        			<th>Quotation Number</th>
+        			<th>Sent Date</th>
+        			<th>Follow-up Date</th>
+        			<th>Status</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+            {% for l in quotfollow %}
+      			<tr>
+        			<td>{{l.grahak}} </td>
+                    <td>{{l.contactprson}}  </td>
+                    <td>{{l.contactnumber}} </td>
+        			<td>{{l.qtnumber}} </td>
+        			
+        			<td>{{l.reverts}} </td>
+        			<td>{{l.}}  </td>
+        			<td>{{l.}} </td>
+      			</tr>
+            {% endfor %}
+    		</tbody>
+  		</table>  	     
+    </div>
+        <div class="jumbotron" style="text-decoration: inherit;">
+    	<h2 style=" font-family:monotype corsiva; font-weight: 900;">New Made Quotations</h2>
+    	<button class="btn btn-success" style="float: right; margin-top: -80px; height: 40px; width: 100px; font-size: 1.5em; text-align: center; overflow:hidden;"><span class="glyphicon glyphicon-plus" style="font-size: 1em;"  data-toggle="modal" data-target="#newquotation">Add</span></button>
+    	<table class="table table-striped" >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Attendent</th>
+                    <th>Phone</th>
+                    <th>Subject</th>
+                    <th>State Code</th>
+                    <th>State</th>
+                    <th>Address</th>
+                    <th>Quotation Number</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for i in quotation %}
+                <tr>
+                    <td><a href="#">{{i.name}}</a></td>
+                    <td>{{i.atten}}</td>
+                    <td>{{i.contact}}</td>
+                    <td>{{i.subject}}</td>
+                    <td>{{i.statecode}}</td>
+                    <td>{{i.state}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.quotnum}}</td>
+                    <td>{{i.quotdate}}</td>
+                    
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>     	     
+    </div>
+
+
+    <!---MODALS SECTION FOR ALL ABOVE -->
+
+    <div class="container">
+
+  <!-- Trigger the modal with a button -->
+  <!-- Modal -->
+  <div class="modal fade" id="newclient" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">New Clients Follow-up</h4>
+        </div>
+        <div class="modal-body">
+          <div id="content">
+           <form action="/work/work_report" method="post">{% csrf_token %}
+            <label for="client_name" style="display: inline block; padding: 10px">Client Name</label><br>
+            <input type="text" id="client_name" name="client_name" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="purpose"style="display: inline block; padding: 10px; margin-top: -90px;">Purpose</label><br>
+            <input type="text" id="purpose" name="purpose" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="contact_person"style="display: inline block; padding: 10px; margin-top: -90px;">Contact Person</label><br>
+            <input type="text" id="contact_person" name="contact_person" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="contact_no"style="display: inline block; padding: 10px; margin-top: -90px;">Contact Number</label><br>
+            <input type="text" id="contact_no" name="contact_no" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="reverted"style="display: inline block; padding: 10px; margin-top: -90px;">Status</label><br>
+            <input type="text" id="reverted" name="reverted" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <button type="submit" class="btn btn-success">Enter</button>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+  <!-- Modal -->
+  <div class="modal fade" id="oldclient" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Old Client Calling</h4>
+        </div>
+        <div class="modal-body">
+          <div id="content">
+             <form action="/work/work_report" method="post">{% csrf_token %}
+            <label for="clientname" style="display: inline block; padding: 10px">Client Name</label><br>
+            <input type="text" id="clientname" name="clientname" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="purposetalk"style="display: inline block; padding: 10px; margin-top: -90px;">Purpose</label><br>
+            <input type="text" id="purposetalk" name="purposetalk" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="contactperson"style="display: inline block; padding: 10px; margin-top: -90px;">Contact Person</label><br>
+            <input type="text" id="contactperson" name="contactperson" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="contactno"style="display: inline block; padding: 10px; margin-top: -90px;">Contact Number</label><br>
+            <input type="text" id="contactno" name="contactno" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="revert"style="display: inline block; padding: 10px; margin-top: -90px;">Status</label><br>
+            <input type="text" id="revert" name="revert" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <button type="submit" class="btn btn-success">Enter</button>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+  <!-- Modal -->
+  <div class="modal fade" id="payment" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Payment Follow-up</h4>
+        </div>
+        <div class="modal-body">
+          <div id="content">
+            <form action="/work/work_report" method="post">{% csrf_token %}
+            <label for="clients" style="display: inline block; padding: 10px">Client Name</label><br>
+            <input type="text" id="clients" name="clients" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="dewamt" style="display: inline block; padding: 10px">Due Amount</label><br>
+            <input type="text" id="dewamt" name="dewamt" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="quotnumber" style="display: inline block; padding: 10px; margin-top: -90px;">Quotation No.</label><br>
+            <input type="text" id="quotnumber" name="quotnumber" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="sentdate" style="display: inline block; padding: 10px; margin-top: -90px;">Sent Date</label><br>
+            <input type="text" id="sentdate" name="sentdate" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="followupdate" style="display: inline block; padding: 10px; margin-top: -90px;">Follow-up Date</label><br>
+            <input type="text" id="followupdate" name="followupdate" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="reply" style="display: inline block; padding: 10px; margin-top: -90px;">Status</label><br>
+            <input type="text" id="reply" name="reply" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <button type="submit" class="btn btn-success">Enter</button>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+  <!-- Modal -->
+  <div class="modal fade" id="quotation" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Quotations Follow-up</h4>
+        </div>
+        <div class="modal-body">
+          <div id="content">
+            <form action="/work/work_report" method="post">{% csrf_token %}
+             <label for="grahak" style="display: inline block; padding: 10px">Client Name</label><br>
+            <input type="text" id="grahak" name="grahak" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="qtnumber"style="display: inline block; padding: 10px; margin-top: -90px;">Quotation No.</label><br>
+            <input type="text" id="qtnumber" name="qtnumber" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="contactprson"style="display: inline block; padding: 10px; margin-top: -90px;">Contact Person</label><br>
+            <input type="text" id="contactprson" name="contactprson" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="contactnumber"style="display: inline block; padding: 10px; margin-top: -90px;">Contact Number</label><br>
+            <input type="text" id="contactnumber" name="contactnumber" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <label for="reverts"style="display: inline block; padding: 10px; margin-top: -90px;">Contact Number</label><br>
+            <input type="text" id="reverts" name="reverts" style="display: inline block; padding: 10px; max-height: 30px; margin-top: -35px; float: right; max-width: 230px;"><br>
+            <button type="submit" class="btn btn-success">Enter</button>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+    <!---END OF MODALS SECTION FOR ALL ABOVE -->
+{% endblock %}

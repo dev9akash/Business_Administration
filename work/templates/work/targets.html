@@ -1,0 +1,32 @@
+{% extends "work/base.html" %}
+{% block content %}
+    <div class="jumbotron" style="text-decoration: inherit;">
+    	<h2 style=" font-family:monotype corsiva; font-weight: 900;">Business Target Details</h2>
+    	<table class="table table-striped">
+    		<thead>
+      			<tr>
+      				<th>Week</th>
+        			<th>Client Name</th>
+        			<th>Quotation Number</th>
+        			<th>Sent date</th>
+        			<th>Followup Date</th>
+        			<th>Status</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+            {% for i in business %}
+      			<tr>
+                    <td>{{i.week}}</td>
+        			<td>{{i.client}} </td>
+        			<td>{{i.quot}} </td>
+        			<td>{{i.sent}}  </td>
+        			<td>{{i.follow}} </td>
+        			<td>{{i.status}} </td>
+      			</tr>
+            {% endfor %}
+    		</tbody>
+  		</table>  
+  		<button class="btn btn-success" style="float: right"><span class="glyphicon glyphicon-edit">Edit</span></button>     
+    </div>
+    
+{% endblock %}

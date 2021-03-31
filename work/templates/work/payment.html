@@ -1,0 +1,45 @@
+{% extends "work/base.html" %}
+{% block content %}
+    <div class="jumbotron" style="text-decoration: inherit;">
+    	<h2 style=" font-family:monotype corsiva; font-weight: 900;">Payment Target Details</h2>
+    	<table class="table table-striped" id="myTable">
+    		<thead>
+      			<tr>			
+        			<th>Week</th>
+        			<th>Client Name</th>
+        			<th>Previous Due</th>
+        			<th>Bill No.</th>
+        			<th>This Bill Amount</th>
+        			<th>Followup Date</th>
+        			<th>Status</th>
+        			<th>Recieved Amount</th>
+        			<th>Total Due</th>
+        		</tr>
+    		</thead>
+    		<tbody>
+            {% for i in pay %}
+      			<tr>
+        			<td>{{i.weekno}}</td>
+        			<td>{{i.client_name}}</td>
+        			<td id="due">{{i.due}}</td>
+        			<td>{{i.bill_no}}</td>
+        			<td id="amount">{{i.amount}}</td>
+        			<td>{{i.followup}}</td>
+        			<td>{{i.stat}}</td>
+        			<td id="recieve">{{i.recieve}}</td>
+                    <td id="total">{{total}}</td>
+      			</tr>
+           {% endfor %}
+      		
+    		</tbody>
+  		</table>  
+  		<button class="btn btn-success"  onclick="func()" style="float: right;"><span class="glyphicon glyphicon-edit">Edit</span></button>     
+    </div>
+    <script type="text/javascript">
+        function func(){
+            document.getElementById("myTable").rows[0].cells.namedItem("total").innerHTML = 25;
+        }
+
+    </script>
+    
+{% endblock %}
